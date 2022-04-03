@@ -1,56 +1,33 @@
-# rest-bcb Project
-
-This project uses Quarkus, the Supersonic Subatomic Java Framework.
-
-If you want to learn more about Quarkus, please visit its website: https://quarkus.io/ .
-
-## Running the application in dev mode
-
-You can run your application in dev mode that enables live coding using:
-```shell script
-./mvnw compile quarkus:dev
+```diff
+- # ATENÇÃO
 ```
+Para rodar o sistema é necessário clonar o módulo que se encontra aqui: https://github.com/allanbrunobr/cliente-cotacao-dolar . O módulo deverá ficar na mesma nível na estrutura da diretório que o cliente-cotacao-dolar.
 
-> **_NOTE:_**  Quarkus now ships with a Dev UI, which is available in dev mode only at http://localhost:8080/q/dev/.
+# Teste técnico -  Cotação-Dólar
 
-## Packaging and running the application
+O teste proposto foi para consumir uma API externa do BCB - Banco Central do Brasil a fim de saber a cotação do dólar. 
 
-The application can be packaged using:
-```shell script
-./mvnw package
-```
-It produces the `quarkus-run.jar` file in the `target/quarkus-app/` directory.
-Be aware that it’s not an _über-jar_ as the dependencies are copied into the `target/quarkus-app/lib/` directory.
+# Tecnologias utilizadas
+Foi utilizado o framework Quarkus e o RestClient para o consumo da API do BCB. O sistema presente receberá uma requisição do cliente-cotacao-dolar. 
 
-The application is now runnable using `java -jar target/quarkus-app/quarkus-run.jar`.
+# Portas
+  O Microserviço Cliente está na porta 8081.
 
-If you want to build an _über-jar_, execute the following command:
-```shell script
-./mvnw package -Dquarkus.package.type=uber-jar
-```
+# Swagger
 
-The application, packaged as an _über-jar_, is now runnable using `java -jar target/*-runner.jar`.
+O swagger **não** está funcionando dentro do Docker. Tentei várias vezes, mas acho que deixei passar algo. Para verificar a documentação via Swagger, precisa clonar o projeto e depois importar por alguma IDE (Eclipse, IntelliJ etc). Após a importação do projeto pela IDE, deve-se rodar a aplicação e acessar a documentação da API pela seguinte url: 
 
-## Creating a native executable
 
-You can create a native executable using: 
-```shell script
-./mvnw package -Pnative
-```
+http://localhost:8082/q/swagger-ui
 
-Or, if you don't have GraalVM installed, you can run the native executable build in a container using: 
-```shell script
-./mvnw package -Pnative -Dquarkus.native.container-build=true
-```
+# Exceptions
+As mensagens das exceções dentro do docker não estão sndo exibidas. Mais uma vez, posso ter deixado passar algo com o Docker. Mas ao executar o programa pela IDE ou até mesmo por um executável (*jar), elas são exibidas na tela.
 
-You can then execute your native executable with: `./target/rest-bcb-1.0.0-SNAPSHOT-runner`
 
-If you want to learn more about building native executables, please consult https://quarkus.io/guides/maven-tooling.
+# Docker
 
-## Provided Code
+A imagem deverá ser criada pelo sistema cliente-cotacao-dolar, de acordo com as instruções no README do mesmo.
 
-### RESTEasy Reactive
+# Testes
 
-Easily start your Reactive RESTful Web Services
-
-[Related guide section...](https://quarkus.io/guides/getting-started-reactive#reactive-jax-rs-resources)
+Infelizmente, não fiz os testes. Nunca fiz parte de alguma Squad de testes por isso, preferi não realizar do que não saber como explicar se questionado. Mas, vendo agora a necessidade, já estou correndo atrás.
