@@ -27,6 +27,3 @@ As mensagens das exceções dentro do docker não estão sndo exibidas. Mais uma
 
 A imagem deverá ser criada pelo sistema cliente-cotacao-dolar, de acordo com as instruções no README do mesmo.
 
-# Testes
-
-Infelizmente, não fiz os testes. Nunca fiz parte de alguma Squad de testes por isso, preferi não realizar do que não saber como explicar se questionado. Mas, vendo agora a necessidade, já estou correndo atrás.
